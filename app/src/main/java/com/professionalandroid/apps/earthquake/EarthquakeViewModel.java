@@ -105,7 +105,7 @@ public class EarthquakeViewModel extends AndroidViewModel {
                                     Log.e(TAG, "Date parsing exception", e);
                                 }
 
-                                String[] location = point.split("");
+                                String[] location = point.split(" ");
                                 Location l = new Location("dummyGPS");
                                 l.setLatitude(Double.parseDouble(location[0]));
                                 l.setLongitude(Double.parseDouble(location[1]));
@@ -140,7 +140,7 @@ public class EarthquakeViewModel extends AndroidViewModel {
                 } catch (SAXException e) {
                     e.printStackTrace();
                 }
-                return null;
+                return earthquakes;
             }
 
             @Override
